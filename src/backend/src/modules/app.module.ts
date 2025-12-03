@@ -2,7 +2,7 @@ import { Module } from "@nestjs/common";
 import { ConfigModule, ConfigService } from "@nestjs/config";
 import { MongooseModule } from "@nestjs/mongoose";
 import { UserModule } from "./user/user.module";
-import { HealthController } from './health.controller';
+import { HealthController } from "./health.controller";
 
 @Module({
   imports: [
@@ -16,6 +16,7 @@ import { HealthController } from './health.controller';
             "MONGODB_URI is not set. Please configure it in .env"
           );
         }
+
         const dbName = config.get<string>("MONGODB_DB_NAME");
         return {
           uri,
@@ -23,8 +24,9 @@ import { HealthController } from './health.controller';
         };
       },
     }),
-  controllers: [HealthController],
-    UserModule,
+    UserModule, // <== module thì nằm trong imports
   ],
+  controllers: [HealthController], // <== controllers tách ra field riêng
+  providers: [],
 })
 export class AppModule {}

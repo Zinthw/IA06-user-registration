@@ -33,9 +33,10 @@ exports.AppModule = AppModule = __decorate([
                     };
                 },
             }),
-            controllers, [health_controller_1.HealthController],
             user_module_1.UserModule,
         ],
+        controllers: [health_controller_1.HealthController],
+        providers: [],
     })
 ], AppModule);
 //# sourceMappingURL=app.module.js.map
