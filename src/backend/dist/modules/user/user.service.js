@@ -17,7 +17,7 @@ const common_1 = require("@nestjs/common");
 const mongoose_1 = require("@nestjs/mongoose");
 const mongoose_2 = require("mongoose");
 const user_schema_1 = require("./user.schema");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 let UserService = class UserService {
     constructor(userModel) {
         this.userModel = userModel;
